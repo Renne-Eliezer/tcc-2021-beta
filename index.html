@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Quiz CRUD</title>
+
+  <!-- BOOTSWATCH -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css">
+
+  <!-- ANIMATE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+
+</head>
+
+<body>
+  <section id="section-form">
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+      <h1 class="navbar-brand">Estude do seu jeito!</h1>
+      <a href="home.html">Home</a>
+      <form class="d-flex">
+        <a class="btn btn-primary" href="quiz.html">Ver Quiz!</a>
+      </form>
+      </div>
+  </nav>
+    <div id="organization">
+      <div class="row">
+        <div class="col"></div>
+        <div id="mae-form" class="col mb-3">
+            <div class=" card mb-3 ml-3 mr-3 mt-3 bg-light">
+              <div  class="p-4" id='insertquest'>
+                <form id="div-form">
+                  <h4 class="text-center mb-3">Adicione suas perguntas</h4>
+                  <textarea class="form-control mb-3" name="enunciado" id="enunciado"  placeholder="Enunciado da pergunta aqui:"></textarea>
+                  <div id="space">  </div>
+                  <input class="form-control mb-2" type="text" id="A" placeholder="Reposta: A">
+                  <div id="space">  </div>
+                  <input class="form-control mb-2" type="text" id="B" placeholder="Reposta: B">
+                  <div id="space">  </div>
+                  <input class="form-control mb-2" type="text" id="C" placeholder="Reposta: C">
+                  <div id="space">  </div>
+                  <input class="form-control mb-2" type="text" id="D" placeholder="Reposta: D">
+                  <div id="space">  </div>
+                  <input class="form-control mb-2" type="text" id="gabarito" placeholder="Gabarito">
+                  <div id="space">  </div>
+                  <input class="form-control mb-3" type="text" id="categoria" placeholder="Categoria da questão">
+                  <div id="space">  </div>
+                  <button class="form-control mb-2  btn-primary" type="submit" id="'btn-task-form'" class="btn btn-primary">Enviar pergunta</button>
+                </form>
+              </div>  
+            </div>
+      </div>
+      <div class="col"></div>
+     </div>
+  </div>
+</section>
+
+ 
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>   
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDpZktb-Ior10nlq02d2uneMt7RnMzltp0",
+    authDomain: "tcc-app-e4a0c.firebaseapp.com",
+    projectId: "tcc-app-e4a0c",
+    storageBucket: "tcc-app-e4a0c.appspot.com",
+    messagingSenderId: "113247297233",
+    appId: "1:113247297233:web:0eea29de5dfd48f81a6ff0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  
+  <script src="bdquiz.js"></script>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/72d87fb601.js" crossorigin="anonymous"></script>
+    
+    <style>
+        html, body{
+            height: 100%;
+        }
+        body{
+            background-color: whitesmoke;
+        }
+    </style>
+    <title>cadastro!</title>
+</head>
+<body>
+    <div class="container h-100 ">
+        <div class="row h-100 d-flex justify-content-center  ">
+            <div class="col-md-5 col-sm-3 d-flex justify-content-center align-items-center">
+                <img src="login-cadastro.png" height="350" width="400" alt="ilustração de cadastro">
+            </div>
+            <div class="col-md-6 col-sm-5 d-flex justify-content-center align-items-center">
+                <form id="userform">
+                    <div class="mb-3">
+                        <label for="exampleInputName1" class="form-label">Nome:</label>
+                        <input type="text" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email:</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">Nunca compartilharemos seu e-mail com mais ninguém.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Senha:</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword2" class="form-label">Confirmar Senha:</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" onclick="cadastro()" class="btn btn-primary rounded-pill" id="signup">Salvar</button>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <a href="login.html" class="link-primary">Fazer Login</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
+   
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDpZktb-Ior10nlq02d2uneMt7RnMzltp0",
+  authDomain: "tcc-app-e4a0c.firebaseapp.com",
+  projectId: "tcc-app-e4a0c",
+  storageBucket: "tcc-app-e4a0c.appspot.com",
+  messagingSenderId: "113247297233",
+  appId: "1:113247297233:web:0eea29de5dfd48f81a6ff0"
+    };
+    firebase.initializeApp(config);
+  </script>
+      <script src="cadastro.js"></script>
+</body>
+</html>

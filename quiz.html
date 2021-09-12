@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/pulse/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/72d87fb601.js" crossorigin="anonymous"></script>
+    
+    <style>
+      body{background-color: whitesmoke;}
+    </style>
+    
+    <title>Quiz!</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand">Estude do seu jeito</a>            
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Site do IFRN</a>
+                </li>
+              </ul>
+          </div>
+          <div class="d-flex justify-content-right">
+            <form class="d-flex" id="questions-selector">
+              <select id="q-selector" class="form-select rounded-pill form-select-sm" aria-label="Quantidade de questões">
+                <option value="null" selected>Quantidade de questões</option>
+                <option value="5">5</option>
+                <option value="15">15</option>
+                <option value="30">30</option>
+                <option value="90">90</option>
+              </select>
+              <select id="m-selector" class="form-select ml-2 mr-2 form-select-sm rounded-pill" aria-label="Matéria desejada">
+                <option value= "0" selected>Matéria desejada</option>
+                <option value="Lingua portuguesa">Língua Portuguêsa</option>
+                <option value="Matematica">Matemática</option>
+                <option value="3">Aleatório</option>
+              </select>
+                <button class="btn btn-primary rounded-pill" type="submit">Enviar</button>
+            </form>
+          </div>
+          
+        </nav>
+       
+    <div class="container">
+      
+      <form name='quiz' id="quiz">
+        <div class="row d-flex justify-content-center">
+          <div class="card col-md-5 col-sm-3 m-3 shadow-sm p-3 mb-5 bg-white rounded ">
+                  <div id="placar" class="text-center mt-2"> Questão: 0/0 </div>
+                  <div class="mb-3 ml-3 mr-3 mt-3">
+                      <h5 class="card-title" id="title-enunciado">O enunciado das perguntas do seu quiz aparecerá aqui</h5>
+                      <h6 class="card-subtitle mb-2 text-muted" id="quest-categoria">A categoria das questões aparecerá aqui</h6>
+                  </div>
+                  <div  class="mb-3 ml-3 mr-3">
+                      <div id="alternativas" class="form-check">
+                          <input class="form-check-input" type="radio" name="resposta" value="A"/>
+                          <label id="R-A" class="form-check-label" for="flexRadioDefault1">
+                            Alternativa A
+                          </label>
+                          <br>
+                          <input class="form-check-input" type="radio" name="resposta" value="B" />
+                          <label id="R-B" class="form-check-label" for="flexRadioDefault2">
+                            Alternativa B
+                          </label>
+                          <br>
+                          <input class="form-check-input" type="radio" name="resposta" value="C" />
+                          <label id="R-C" class="form-check-label" for="flexRadioDefault2">
+                            Alternativa C
+                          </label>
+                          <br>
+                          <input class="form-check-input" type="radio" name="resposta" value="D" />
+                          <label id="R-D" class="form-check-label" for="flexRadioDefault2">
+                            Alternativa D
+                          </label>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-center">
+                    <div class="col-md-3 col-sm-6 d-flex justify-content-center">
+                      <button type="button" id="btnsubmit"  class="btn-primary p-2 rounded-pill mb-3 far fa-check-circle">Responder</button>
+                    </div>
+                    <div class="col-md-5 col-sm-6 d-flex justify-content-center">
+                      <button type="button" id="nextq"  class="btn-primary p-2 rounded-pill mb-3 fas fa-arrow-right ">Proxima pergunta</button>
+                    </div>
+                  </div>
+          </div>   
+        
+               
+         
+            <div id="divresultscor" class="card col-md-6 col-sm-3 m-3 shadow-sm p-3 mb-5 rounded" >
+              <div class="mb-3 ml-3 mr-3 mt-3">
+                <p id="questcorrect">O número da questão vai aparecer aqui</p>
+                <h5 class="card-title" id="enunciadocor">O enunciado das perguntas "Certas" ou "Erradas" aparecerá aqui</h5>
+              </div>
+              <div class="mb-3 ml-3 mr-3">
+                <p id="categoriacor">O gabarito vai aparecer aqui</p>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-sm-12 d-flex justify-content-center">
+                  <button type="button" id="btncertas"  class="btn-primary rounded-pill p-2 mb-3 far fa-eye">Questões Certas</button>
+                </div>
+                <div class="col-md-4 col-sm-3 d-flex justify-content-center">
+                  <button type="button" id="btnerradas"  class="btn-primary rounded-pill p-2  mb-3 far fa-eye">Questões Erradas</button>
+                </div>
+                <div class="col-md-4 col-sm-3 d-flex justify-content-center">
+                  <button type="button" id="nextresult"  class="btn-primary rounded-pill p-2  mb-3 fas fa-arrow-right">Proxima pergunta</button>
+                </div>
+              </div>
+              <div id="placarcrts" class="far fa-check-circle text-center mt-2"> Questões certas: 0/0 </div>
+              <div id="placarerds" class="far fa-times-circle text-center mt-2"> Questões erradas: 0/0 </div>
+            </div>
+          
+        </div> 
+      </form>
+    </div>
+      
+        
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>   
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDpZktb-Ior10nlq02d2uneMt7RnMzltp0",
+    authDomain: "tcc-app-e4a0c.firebaseapp.com",
+    projectId: "tcc-app-e4a0c",
+    storageBucket: "tcc-app-e4a0c.appspot.com",
+    messagingSenderId: "113247297233",
+    appId: "1:113247297233:web:0eea29de5dfd48f81a6ff0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+    
+    <script src="quizquest.js"></script>
+</body>
+</html>
